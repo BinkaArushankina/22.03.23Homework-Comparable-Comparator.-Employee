@@ -1,6 +1,8 @@
 package Homework;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 
 public class Main {
@@ -10,43 +12,43 @@ public class Main {
         //Создать дополнительные возможности сортировки по: salary, age, name а также по ageAndThenName,
         //т.е. если возраст одинаковый, то сортировать по имени.
         //Создать в классе Main список сотрудников и отсортировать его всеми этими способами
-
-        Employee harald= new Employee(159,"Harald",35,4100);
-        Employee georg= new Employee(285,"Georg",47,4800);
-        Employee tobias= new Employee(372,"Toby",42,3800);
-        Employee daniel= new Employee(284,"Daniel",35,5000);
+        List<Employee> employees= Arrays.asList(
+                new Employee(159,"Harald",35,4100),
+                new Employee(285,"Georg",47,4800),
+                new Employee(372,"Toby",42,3800),
+                new Employee(284,"Daniel",35,5000) );
 
         System.out.println("Sorting by id");
-        Employee[]employees={harald,georg,tobias,daniel};
-        Arrays.sort(employees);
+        //Employee[]employees={harald,georg,tobias,daniel};//Array
+        Collections.sort(employees);
         for (Employee employee:employees){
             System.out.println(employee);
         }
         System.out.println();
 
         System.out.println("Sorting by salary");
-        Arrays.sort(employees,new SalaryComparator());
+        employees.sort(new SalaryComparator());
         for (Employee employee:employees){
             System.out.println(employee);
         }
         System.out.println();
 
         System.out.println("Sorting by age");
-        Arrays.sort(employees,new AgeComparator());
+        Collections.sort(employees,new AgeComparator());
         for (Employee employee:employees){
             System.out.println(employee);
         }
         System.out.println();
 
         System.out.println("Sorting by name");
-        Arrays.sort(employees,new NameComparator());
+        Collections.sort(employees,new NameComparator());
         for (Employee employee:employees){
             System.out.println(employee);
         }
         System.out.println();
 
         System.out.println("Sorting by AgeAndThenName");
-        Arrays.sort(employees,new ageAndThenNameComparator());
+        Collections.sort(employees,new ageAndThenNameComparator());
         for (Employee employee:employees){
             System.out.println(employee);
         }
