@@ -25,28 +25,28 @@ public class Main {
         System.out.println();
 
         System.out.println("Sorting by salary");
-        Arrays.sort(employees,new SalarySorting());
+        Arrays.sort(employees,new SalaryComparator());
         for (Employee employee:employees){
             System.out.println(employee);
         }
         System.out.println();
 
         System.out.println("Sorting by age");
-        Arrays.sort(employees,new AgeSorting());
+        Arrays.sort(employees,new AgeComparator());
         for (Employee employee:employees){
             System.out.println(employee);
         }
         System.out.println();
 
         System.out.println("Sorting by name");
-        Arrays.sort(employees,new NameSorting());
+        Arrays.sort(employees,new NameComparator());
         for (Employee employee:employees){
             System.out.println(employee);
         }
         System.out.println();
 
         System.out.println("Sorting by AgeAndThenName");
-        Arrays.sort(employees,new ageAndThenNameSorting());
+        Arrays.sort(employees,new ageAndThenNameComparator());
         for (Employee employee:employees){
             System.out.println(employee);
         }
